@@ -1,0 +1,14 @@
+/**
+ * Styles for the add-observation.html page 
+ */
+ .required
+ {
+   color: red;
+ }
+
+ input .description{
+     width: 500px;
+ }
+ .dsp{
+     color:hsl(207, 100%, 48%);
+ }
