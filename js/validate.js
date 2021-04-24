@@ -6,26 +6,39 @@ function validate(event) {
   // form from being submitted. If both values are valid, allow the form to be
   // submitted.
   console.log('TODO - validate the longitude, latitude values before submitting');
-  let form = document.querySelector('#form-obs');
-  let submitBtn = document.querySelector('#submit');
-  submitBtn.onclick = (event)=>{
-    form.classList.add('was-validated');
-  }
-  
-  form["latitude"].oninput('event',()=>{
-    let lat = form["latitude"].value;
-    console.log(lat);
-    if(90 < lat || lat < -90 ){
-      event.preventDefault();
-      form["latitude"].setCustomValidity('must be a valid Latitude (-90 to 90)');
-    }else{
-      email.setCustomValidity('');
+  var latitude = document.getElementById("latitude").value;
+  var longitude = document.getElementById("longitude").value;
+  var valid = true;
+
+  var laterror = document.getElementById("errorlat");
+  var lngerror = document.getElementById("errorlng");
+
+  if (valid == true) {
+    if (latitude < -90 || latitude > 90 || isNaN(latitude)) {
+      valid = false;
+      laterror.innerText = " must be a valid Latitude (-90 to 90)";
     }
-});
+    else {
+      laterror.innerText = "";
+    }
+
+    if (longitude < -180 || longitude > 180 || isNaN(longitude)) {
+      valid = false;
+      lngerror.innerText = " must be a valid longitude (-180 to 180)";
+    } 
+    else {
+      lngerror.innerText = "";
+    }
+  }
+  if (valid == false) {
+    event.preventDefault();
+  }
 }
+
 
 // Wait for the window to load, then set up the submit event handler for the form.
 window.onload = function() {
   const form = document.querySelector('form');
   form.onsubmit = validate;
 };
+
