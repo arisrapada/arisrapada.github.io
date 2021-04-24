@@ -55,7 +55,7 @@
       <section>
         <h2>Observation Details</h2>
         <p><span class="required">*</span> Required field</p>
-        <form action="https://formspree.io/f/mgervkgw" method="POST" class="was-validated" id = "form-obs">
+        <form action="https://formspree.io/f/xqkwadbo" method="POST" class="was-validated" id = "form-obs">
           <fieldset>
           <legend>
             Observation
@@ -82,17 +82,17 @@
           </fieldset>
 
 
-            <fieldset>
-              <legend>Location</legend>
-            <label for ="latitude">
-              Latitude<span class="required">*</span><br>
-              <input type="text" id = "latitude" name="latitude" value ="" placeholder ="43.7955" required="required">
-            </label>
-            <br>
-            <label for="longitude">
-              Longitude<span class="required">*</span><br>
-              <input type="text" id = "longitude" name="longitude" value="" placeholder ="-79.3496" required ="required">
-            </label>
+          <fieldset>
+            <legend>Location</legend>
+          <label for ="latitude">
+            Latitude<span id="errorlat" class="required">*</span><br>
+            <input type="number" id = "latitude" name="latitude" autofocus required placeholder ="43.7955">
+          </label>
+          <br>
+          <label for="longitude">
+            Longitude<span id="errorlng" class="required">*</span><br>
+            <input type="number" id = "longitude" name="longitude" autofocus required placeholder ="-79.3496">
+          </label>
             <br>
             <input type="checkbox" name ="box">
             <label>
